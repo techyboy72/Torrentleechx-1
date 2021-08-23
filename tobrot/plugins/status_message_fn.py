@@ -43,7 +43,7 @@ async def status_message_f(
 ):  # weird code but 'This is the way' @gautamajay52
     aria_i_p = await aria_start()
     # Show All Downloads
-    to_edit = await message.reply(".......")
+    to_edit = await message.reply("Processing...")
     chat_id = int(message.chat.id)
     mess_id = int(to_edit.message_id)
     async with _lock:
@@ -99,7 +99,7 @@ async def status_message_f(
             f"<b>RAM:</b> <code>{ram}%</code> <b>CPU:</b> <code>{cpu}%</code>\n"
         )
         if msg == "":
-            msg = "🤷‍♂️ No Active, Queued or Paused TORRENTs"
+            msg = "❎ No Active, Queued or Paused 🧲s"
             msg = ms_g + "\n" + msg
             await to_edit.edit(msg)
             break
@@ -131,7 +131,7 @@ async def status_message_f(
 async def cancel_message_f(client, message):
     if len(message.command) > 1:
         # /cancel command
-        i_m_s_e_g = await message.reply_text("checking..?", quote=True)
+        i_m_s_e_g = await message.reply_text("Checking...🔍", quote=True)
         aria_i_p = await aria_start()
         g_id = message.command[1].strip()
         LOGGER.info(g_id)
