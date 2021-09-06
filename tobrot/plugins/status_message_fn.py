@@ -43,7 +43,7 @@ async def status_message_f(
 ):  # weird code but 'This is the way' @gautamajay52
     aria_i_p = await aria_start()
     # Show All Downloads
-    to_edit = await message.reply("Processing...")
+    to_edit = await message.reply("Processing...⚒️")
     chat_id = int(message.chat.id)
     mess_id = int(to_edit.message_id)
     async with _lock:
@@ -76,15 +76,15 @@ async def status_message_f(
                 percentage = int(file.progress_string(0).split('%')[0])
                 prog = "[{0}{1}]".format("".join([FINISHED_PROGRESS_STR for i in range(math.floor(percentage / 5))]),"".join([UN_FINISHED_PROGRESS_STR for i in range(20 - math.floor(percentage / 5))]))
 
-                msg += f"\n🔘🔘🔘🔘🔘🔘🔘🔘🔘🔘🔘<b></b>"
+                msg += f"\n🔘🔘🔘🔘🔘🔘🔘🔘🔘🔘🔘🔘🔘🔘🔘"
                 msg += f"\n🔘<i><b><code>{downloading_dir_name}</b></i>"
                 msg += f"\n🔘<b>{prog}</b>"
                 msg += f"\n🔘<b>Speed ⚡</b>: {file.download_speed_string()}"
-                msg += f"\n🔘<b>Status</b>: {file.progress_string()} <b>of</b> {file.total_length_string()}"
+                msg += f"\n🔘<b>🔄🔄</b>: {file.progress_string()} <b>of</b> {file.total_length_string()}"
                 msg += f"\n🔘<b>ETA ⏳:</b> {file.eta_string()}"
                 msg += f"\n🔘{msgg}"
                 msg += f"\n🔘<b>To Cancel 🗑️:</b> <code>/cancel@Smu1bot {file.gid}</code>"
-                msg += "\n🔘🔘🔘🔘🔘🔘🔘🔘🔘🔘🔘"
+                msg += "\n🔘🔘🔘🔘🔘🔘🔘🔘🔘🔘🔘🔘🔘🔘🔘"
 
         hr, mi, se = up_time(time.time() - BOT_START_TIME)
         total, used, free = shutil.disk_usage(".")
@@ -146,7 +146,7 @@ async def cancel_message_f(client, message):
                 downloads = aria_i_p.get_downloads(gid_list)
             aria_i_p.remove(downloads=downloads, force=True, files=True, clean=True)
             await i_m_s_e_g.edit_text(
-                f"Download cancelled :\n<code>{name} ({size})</code> by <a href='tg://user?id={message.from_user.id}'>{message.from_user.first_name}</a>"
+                f"Cancelled ✅\nTata GdBye Khatam :\n<code>{name} ({size})</code> by <a href='tg://user?id={message.from_user.id}'>{message.from_user.first_name}</a>"
             )
         except Exception as e:
             await i_m_s_e_g.edit_text("<i>FAILED 🥱</i>\n\n" + str(e) + "\n#error")
@@ -196,7 +196,7 @@ async def exec_message_f(client, message):
 
 
 async def upload_document_f(client, message):
-    imsegd = await message.reply_text("Processing ...")
+    imsegd = await message.reply_text("Processing ...⚒️")
     if message.from_user.id in AUTH_CHANNEL:
         if " " in message.text:
             recvd_command, local_file_name = message.text.split(" ", 1)
@@ -209,7 +209,7 @@ async def upload_document_f(client, message):
 
 async def eval_message_f(client, message):
     if message.from_user.id in AUTH_CHANNEL:
-        status_message = await message.reply_text("Processing ...")
+        status_message = await message.reply_text("Processing ...⚒️")
         cmd = message.text.split(" ", maxsplit=1)[1]
 
         reply_to_id = message.message_id
@@ -284,9 +284,9 @@ async def upload_log_file(client, message):
 
 async def upload_as_doc(client, message):
     user_specific_config[message.from_user.id]=UserDynaConfig(message.from_user.id,True)
-    await message.reply_text("**🗞 Your Files Will Be Uploaded As Document 📁**")
+    await message.reply_text("U'r Files Will Be ⬆️ As Doc 📁")
 
 
 async def upload_as_video(client, message):
     user_specific_config[message.from_user.id]=UserDynaConfig(message.from_user.id,False)
-    await message.reply_text("**🗞 Your Files Will Be Uploaded As Streamable 🎞**")
+    await message.reply_text("U'r Files Will Be ⬆️ As Stream 🎞️")
