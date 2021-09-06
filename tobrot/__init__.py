@@ -105,7 +105,7 @@ TELEGRAM_LEECH_COMMAND = os.environ.get("TELEGRAM_LEECH_COMMAND", "tleech@Smu1bo
 TELEGRAM_LEECH_UNZIP_COMMAND = os.environ.get(
     "TELEGRAM_LEECH_UNZIP_COMMAND", "tleechunzip@Smu1bot"
 )
-CANCEL_COMMAND_G = os.environ.get("CANCEL_COMMAND_G", "cancel@Smu1bot")
+CANCEL_COMMAND_G = os.environ.get("CANCEL_COMMAND_G", "cancel")
 GET_SIZE_G = os.environ.get("GET_SIZE_G", "getsize@Smu1bot")
 STATUS_COMMAND = os.environ.get("STATUS_COMMAND", "status@Smu1bot")
 SAVE_THUMBNAIL = os.environ.get("SAVE_THUMBNAIL", "savethumbnail@Smu1bot")
