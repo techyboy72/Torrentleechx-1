@@ -78,9 +78,9 @@ async def status_message_f(
 
                 msg += f"\n🔘🔘🔘🔘🔘🔘🔘🔘🔘🔘🔘🔘🔘🔘🔘"
                 msg += f"\n🔘<i><b><code>{downloading_dir_name}</b></i>"
-                msg += f"\n🔘<b>{prog}</b>"
+                msg += f"\n🔘{prog}"
                 msg += f"\n🔘<b>Speed ⚡</b>: {file.download_speed_string()}"
-                msg += f"\n🔘<b>🔄🔄</b>: {file.progress_string()} <b>of</b> {file.total_length_string()}"
+                msg += f"\n🔘<b>Status 🟩🟦</b>: {file.progress_string()} <b>of</b> {file.total_length_string()}"
                 msg += f"\n🔘<b>ETA ⏳:</b> {file.eta_string()}"
                 msg += f"\n🔘{msgg}"
                 msg += f"\n🔘<b>To Cancel 🗑️:</b> <code>/cancel@Smu1bot {file.gid}</code>"
@@ -146,7 +146,7 @@ async def cancel_message_f(client, message):
                 downloads = aria_i_p.get_downloads(gid_list)
             aria_i_p.remove(downloads=downloads, force=True, files=True, clean=True)
             await i_m_s_e_g.edit_text(
-                f"Cancelled ✅\nTata GdBye Khatam :\n<code>{name} ({size})</code> by <a href='tg://user?id={message.from_user.id}'>{message.from_user.first_name}</a>"
+                f"Cancelled ✅ Tata GdBye Khatam :\n<code>{name} ({size})</code> by <a href='tg://user?id={message.from_user.id}'>{message.from_user.first_name}</a>"
             )
         except Exception as e:
             await i_m_s_e_g.edit_text("<i>FAILED 🥱</i>\n\n" + str(e) + "\n#error")
