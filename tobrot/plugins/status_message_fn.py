@@ -74,17 +74,17 @@ async def status_message_f(
                     msgg = f"<b>Peers:</b> {file.connections} | <b>Seeders:</b> {file.num_seeders}"
 
                 percentage = int(file.progress_string(0).split('%')[0])
-                prog = "[{0}{1}]".format("".join([FINISHED_PROGRESS_STR for i in range(math.floor(percentage / 5))]),"".join([UN_FINISHED_PROGRESS_STR for i in range(20 - math.floor(percentage / 5))]))
+                prog = "[{0}{1}]".format("".join([FINISHED_PROGRESS_STR for i in range(math.floor(percentage / 5))]),"".join([UN_FINISHED_PROGRESS_STR for i in range(15 - math.floor(percentage / 5))]))
 
                 msg += f"\n🔘🔘🔘🔘🔘🔘🔘🔘🔘🔘🔘🔘🔘🔘🔘"
-                msg += f"\n🔘<i><b><code>{downloading_dir_name}</b></i>"
+                msg += f"\n🔘<i><b><code>{downloading_dir_name}</b></i></a>"
                 msg += f"\n🔘{prog}"
                 msg += f"\n🔘<b>Speed ⚡</b>: {file.download_speed_string()}"
                 msg += f"\n🔘<b>Status 🟩🟦</b>: {file.progress_string()} <b>of</b> {file.total_length_string()}"
                 msg += f"\n🔘<b>ETA ⏳:</b> {file.eta_string()}"
                 msg += f"\n🔘{msgg}"
-                msg += f"\n🔘<b>To Cancel 🗑️:</b> <code>/cancel@Smu1bot {file.gid}</code>"
-                msg += "\n🔘🔘🔘🔘🔘🔘🔘🔘🔘🔘🔘🔘🔘🔘🔘"
+                msg += f"\n🔘<b>Cancel:</b> <code>/cancel@Smu1bot {file.gid}</code>"
+                msg += "\n🔘🔘🔘🔘🔘🔘🔘🔘🔘"
 
         hr, mi, se = up_time(time.time() - BOT_START_TIME)
         total, used, free = shutil.disk_usage(".")
