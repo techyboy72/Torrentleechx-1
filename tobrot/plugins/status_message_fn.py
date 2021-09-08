@@ -43,7 +43,7 @@ async def status_message_f(
 ):  # weird code but 'This is the way' @gautamajay52
     aria_i_p = await aria_start()
     # Show All Downloads
-    to_edit = await message.reply("Processing...⚒️")
+    to_edit = await message.reply("Processing...⚒️ Ruko ✋ Jara Sabar Karo")
     chat_id = int(message.chat.id)
     mess_id = int(to_edit.message_id)
     async with _lock:
@@ -69,7 +69,7 @@ async def status_message_f(
             if file.status == "active":
                 is_file = file.seeder
                 if is_file is None:
-                    msgg = f"<b>Conn:</b> {file.connections}"
+                    msgg = f"<b>Conn 🔌:</b> {file.connections}"
                 else:
                     msgg = f"<b>🍐s:</b> {file.connections} | <b>🌱ers:</b> {file.num_seeders}"
 
@@ -132,7 +132,7 @@ async def status_message_f(
 async def cancel_message_f(client, message):
     if len(message.command) > 1:
         # /cancel command
-        i_m_s_e_g = await message.reply_text("Checking...🔍", quote=True)
+        i_m_s_e_g = await message.reply_text("Scanning...🔍", quote=True)
         aria_i_p = await aria_start()
         g_id = message.command[1].strip()
         LOGGER.info(g_id)
@@ -196,7 +196,7 @@ async def exec_message_f(client, message):
 
 
 async def upload_document_f(client, message):
-    imsegd = await message.reply_text("Processing ...⚒️")
+    imsegd = await message.reply_text("Processing ...⚒️ Ruko ✋ Jara Sabar Karo")
     if message.from_user.id in AUTH_CHANNEL:
         if " " in message.text:
             recvd_command, local_file_name = message.text.split(" ", 1)
@@ -209,7 +209,7 @@ async def upload_document_f(client, message):
 
 async def eval_message_f(client, message):
     if message.from_user.id in AUTH_CHANNEL:
-        status_message = await message.reply_text("Processing ...⚒️")
+        status_message = await message.reply_text("Processing ...⚒️ Ruko ✋ Jara Sabar Karo")
         cmd = message.text.split(" ", maxsplit=1)[1]
 
         reply_to_id = message.message_id
