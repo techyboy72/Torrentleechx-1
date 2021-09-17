@@ -308,5 +308,5 @@ async def rename_tg_file(client, message):
 
     else:
         await message.reply_text(
-            "Reply like "/rename@smu1bot filename.mp4"", quote=True
+            "Reply like /rename@smu1bot filename.mp4", quote=True
         )
