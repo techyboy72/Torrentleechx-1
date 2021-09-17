@@ -39,7 +39,7 @@ async def button(bot, update: CallbackQuery):
         return
     if "|" in cb_data:
         await bot.answer_callback_query(
-            update.id, text="Trying to download...", show_alert=False
+            update.id, text="Trying to ⬇️load...", show_alert=False
         )
         await youtube_dl_call_back(bot, update)
         return
@@ -57,7 +57,7 @@ async def button(bot, update: CallbackQuery):
             )
             if len(cb_data) > 1:
                 i_m_s_e_g = await update.message.reply_to_message.reply_text(
-                    "Scanning...", quote=True
+                    "Scanning...🔍", quote=True
                 )
                 aria_i_p = await aria_start()
                 g_id = cb_data.split()[-1]
