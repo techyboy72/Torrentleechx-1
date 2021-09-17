@@ -43,7 +43,7 @@ async def status_message_f(
 ):  # weird code but 'This is the way' @gautamajay52
     aria_i_p = await aria_start()
     # Show All Downloads
-    to_edit = await message.reply("Processing...⚒️ Ruko ✋ Jara Sabar Karo")
+    to_edit = await message.reply("Processing ...⚒️ Ruko ✋ Jara Sabar Karo.\n Hmm bahut Tez Ho rahe ho Hmmm 👊👊👊")
     chat_id = int(message.chat.id)
     mess_id = int(to_edit.message_id)
     async with _lock:
@@ -149,7 +149,7 @@ async def cancel_message_f(client, message):
                 f"<b>Cancelled ✅ Tata GdBye Khatam 😁</b> :\n<code>{name} ({size})</code> by <a href='tg://user?id={message.from_user.id}'>{message.from_user.first_name}</a>"
             )
         except Exception as e:
-            await i_m_s_e_g.edit_text("<i>FAILED 🥱</i>\n\n" + str(e) + "\n#error")
+            await i_m_s_e_g.edit_text("<i>FAILED 🥱 Gaya Khatam 😁</i>\n\n" + str(e) + "\n#error")
     else:
         await message.delete()
 
@@ -209,7 +209,7 @@ async def upload_document_f(client, message):
 
 async def eval_message_f(client, message):
     if message.from_user.id in AUTH_CHANNEL:
-        status_message = await message.reply_text("Processing ...⚒️ Ruko ✋ Jara Sabar Karo")
+        status_message = await message.reply_text("Processing ...⚒️ Ruko ✋ Jara Sabar Karo.\n Hmm bahut Tez Ho rahe ho Hmmm 👊👊👊")
         cmd = message.text.split(" ", maxsplit=1)[1]
 
         reply_to_id = message.message_id
