@@ -1,8 +1,8 @@
 class DirectDownloadLinkException(Exception):
-    """No method found to download from that Direct Link :("""
+    """No methods found 2 ⬇️load this link\nKitna manhoos link hai ye 😶"""
     pass
 
 
 class NotSupportedExtractionArchive(Exception):
-    """The Archive Format you are trying to Extract Is Not Supported"""
+    """The Archive Format you are trying to Extract\n Is Not Supported"""
     pass
