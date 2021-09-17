@@ -54,10 +54,10 @@ async def incoming_message_f(client, message):
     user_command = message.command[0]
     g_id = message.from_user.id
     credit = await message.reply_text(
-        f"🧲 Leeching for you <a href='tg://user?id={g_id}'>🤕</a>", parse_mode="html"
+        f"Leeching Specially 4 U 😍 <a href='tg://user?id={g_id}'>😁</a>", parse_mode="html"
     )
     # get link from the incoming message
-    i_m_sefg = await message.reply_text("processing...", quote=True)
+    i_m_sefg = await message.reply_text("Processing... ⚒️", quote=True)
     rep_mess = message.reply_to_message
     is_file = False
     dl_url = ''
@@ -73,7 +73,7 @@ async def incoming_message_f(client, message):
             LOGGER.info(cf_name)
         else:
             if user_command == LEECH_COMMAND.lower():
-                await i_m_sefg.edit("No downloading source provided 🙄")
+                await i_m_sefg.edit("No Dl ⬇️ source provided \nTo Kya karun mein marjaun 🙄")
                 return
             is_file = True
             dl_url = rep_mess
@@ -82,7 +82,7 @@ async def incoming_message_f(client, message):
         LOGGER.info(dl_url)
 
     else:
-        await i_m_sefg.edit("👺𝙉𝙤 𝙙𝙤𝙬𝙣𝙡𝙤𝙖𝙙𝙞𝙣𝙜 𝙨𝙤𝙪𝙧𝙘𝙚 𝙥𝙧𝙤𝙫𝙞𝙙𝙚𝙙👺")
+        await i_m_sefg.edit("No Dl ⬇️ source provided \nTo Kya karun mein marjaun 🙄")
         return
     if dl_url is not None:
 
@@ -96,12 +96,12 @@ async def incoming_message_f(client, message):
             os.makedirs(new_download_location)
         aria_i_p = ''
         if not is_file:
-            await i_m_sefg.edit_text("extracting links")
+            await i_m_sefg.edit_text("Extracting links 🔗")
             # start the aria2c daemon
             aria_i_p = await aria_start()
             # LOGGER.info(aria_i_p)
 
-        await i_m_sefg.edit_text("Added to downloads. Send /status@Smu1bot")
+        await i_m_sefg.edit_text("/status@Smu1bot ✅ Added to downloads ⬇️.")
         # try to download the "link"
         is_zip = False
         is_cloud = False
@@ -138,7 +138,7 @@ async def incoming_message_f(client, message):
             await i_m_sefg.edit_text(err_message)
     else:
         await i_m_sefg.edit_text(
-            "What have you entered. \nPlease read /help \n"
+            "What have U entered ⁉️. \nPlease read /help \n"
             f"<b>API Error</b>: {cf_name}"
         )
 
@@ -147,10 +147,10 @@ async def incoming_youtube_dl_f(client, message):
     """ /ytdl command """
     current_user_id = message.from_user.id
     credit = await message.reply_text(
-        f"💀 Downloading for you <a href='tg://user?id={current_user_id}'>🤕</a>",
+        f"⬇️loading Specially 4 U <a href='tg://user?id={current_user_id}'>😍</a>",
         parse_mode="html",
     )
-    i_m_sefg = await message.reply_text("processing...", quote=True)
+    i_m_sefg = await message.reply_text("Processing... ⚒️", quote=True)
     # LOGGER.info(message)
     # extract link from message
     if message.reply_to_message:
@@ -167,10 +167,10 @@ async def incoming_youtube_dl_f(client, message):
         yt_dl_pass_word = None
         cf_name = None
     else:
-        await i_m_sefg.edit("😔 No downloading source provided 🙄")
+        await i_m_sefg.edit("No Dl ⬇️ source provided \nTo Kya karun mein marjaun 🙄")
         return
     if dl_url is not None:
-        await i_m_sefg.edit_text("extracting links")
+        await i_m_sefg.edit_text("Extracting links")
         # create an unique directory
         user_working_dir = os.path.join(
             DOWNLOAD_LOCATION, str(current_user_id))
@@ -198,7 +198,7 @@ async def incoming_youtube_dl_f(client, message):
             await i_m_sefg.edit_text(text=text_message, reply_markup=reply_markup)
     else:
         await i_m_sefg.edit_text(
-            "What have you entered. \nPlease read /help \n"
+            "What have u entered ⁉️. \nPlease read /help \n"
             f"<b>API Error</b>: {cf_name}"
         )
 
@@ -219,17 +219,17 @@ async def g_yt_playlist(client, message):
         if user_command == GPYTDL_COMMAND.lower():
             is_cloud = True
     else:
-        await message.reply_text("😔 No downloading source provided 🙄", quote=True)
+        await message.reply_text("No Dl ⬇️ source provided \nTo Kya karun mein marjaun 🙄", quote=True)
         return
     if "youtube.com/playlist" in url:
         i_m_sefg = await message.reply_text(
-            f"💀 Downloading for you <a href='tg://user?id={usr_id}'>🤗</a>",
+            f"⬇️loading Specially 4 u 😍 <a href='tg://user?id={usr_id}'>🤗</a>",
             parse_mode="html",
         )
         await yt_playlist_downg(message, i_m_sefg, client, is_cloud)
 
     else:
-        await message.reply_text("YouTube playlist link only 🙄", quote=True)
+        await message.reply_text("Please YouTube playlist link only 🙄", quote=True)
 
 
 #
@@ -256,7 +256,7 @@ async def g_clonee(client, message):
 async def rename_tg_file(client, message):
     usr_id = message.from_user.id
     if not message.reply_to_message:
-        await message.reply("😔 No downloading source provided 🙄", quote=True)
+        await message.reply("No Dl ⬇️ source provided \nTo Kya karun mein marjaun 🙄", quote=True)
         return
     if len(message.command) > 1:
         new_name = (
@@ -294,12 +294,12 @@ async def rename_tg_file(client, message):
                 message_to_send += "\n"
             if message_to_send != "":
                 mention_req_user = (
-                    f"<a href='tg://user?id={usr_id}'>Your Requested Files</a>\n\n"
+                    f"<a href='tg://user?id={usr_id}'>Your Requested Files \nUploadded By @Publicleech1</a>\n\n"
                 )
                 message_to_send = mention_req_user + message_to_send
                 message_to_send = message_to_send + "\n\n" + "#uploads"
             else:
-                message_to_send = "<i>FAILED</i> to upload files. 😞😞"
+                message_to_send = "<i>FAILED</i> 2 ⬆️load files. 😞😞\nTry again or send fresh Link"
             await message.reply_text(
                 text=message_to_send, quote=True, disable_web_page_preview=True
             )
@@ -308,5 +308,5 @@ async def rename_tg_file(client, message):
 
     else:
         await message.reply_text(
-            "😔 Provide new name of the file with extension 😐", quote=True
+            "Reply like "/rename@smu1bot filename.mp4"", quote=True
         )
