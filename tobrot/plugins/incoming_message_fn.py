@@ -73,7 +73,7 @@ async def incoming_message_f(client, message):
             LOGGER.info(cf_name)
         else:
             if user_command == LEECH_COMMAND.lower():
-                await i_m_sefg.edit("No Dl ⬇️ source provided \nTo Kya karun mein marjaun 🙄")
+                await i_m_sefg.edit("𝐆𝐢𝐛, 𝐚 𝐯𝐚𝐥𝐢𝐝 𝐥𝐢𝐧𝐤 𝐯𝐞𝐫𝐨 (◔‿◔)")
                 return
             is_file = True
             dl_url = rep_mess
@@ -82,7 +82,7 @@ async def incoming_message_f(client, message):
         LOGGER.info(dl_url)
 
     else:
-        await i_m_sefg.edit("No Dl ⬇️ source provided \nTo Kya karun mein marjaun 🙄")
+        await i_m_sefg.edit("𝐆𝐢𝐛, 𝐚 𝐯𝐚𝐥𝐢𝐝 𝐥𝐢𝐧𝐤 𝐯𝐞𝐫𝐨 (◔‿◔)")
         return
     if dl_url is not None:
 
@@ -101,7 +101,7 @@ async def incoming_message_f(client, message):
             aria_i_p = await aria_start()
             # LOGGER.info(aria_i_p)
 
-        await i_m_sefg.edit_text("/status@Smu1bot ✅ Added to downloads ⬇️.")
+        await i_m_sefg.edit_text("/status ✅ Added to downloads ⬇️.")
         # try to download the "link"
         is_zip = False
         is_cloud = False
@@ -167,7 +167,7 @@ async def incoming_youtube_dl_f(client, message):
         yt_dl_pass_word = None
         cf_name = None
     else:
-        await i_m_sefg.edit("No Dl ⬇️ source provided \nTo Kya karun mein marjaun 🙄")
+        await i_m_sefg.edit("𝐆𝐢𝐛, 𝐚 𝐯𝐚𝐥𝐢𝐝 𝐥𝐢𝐧𝐤 𝐯𝐞𝐫𝐨 (◔‿◔)")
         return
     if dl_url is not None:
         await i_m_sefg.edit_text("Extracting links")
@@ -219,7 +219,7 @@ async def g_yt_playlist(client, message):
         if user_command == GPYTDL_COMMAND.lower():
             is_cloud = True
     else:
-        await message.reply_text("No Dl ⬇️ source provided \nTo Kya karun mein marjaun 🙄", quote=True)
+        await message.reply_text("𝐆𝐢𝐛, 𝐚 𝐯𝐚𝐥𝐢𝐝 𝐥𝐢𝐧𝐤 𝐯𝐞𝐫𝐨 (◔‿◔)", quote=True)
         return
     if "youtube.com/playlist" in url:
         i_m_sefg = await message.reply_text(
@@ -256,7 +256,7 @@ async def g_clonee(client, message):
 async def rename_tg_file(client, message):
     usr_id = message.from_user.id
     if not message.reply_to_message:
-        await message.reply("No Dl ⬇️ source provided \nTo Kya karun mein marjaun 🙄", quote=True)
+        await message.reply("𝐆𝐢𝐛, 𝐚 𝐯𝐚𝐥𝐢𝐝 𝐥𝐢𝐧𝐤 𝐯𝐞𝐫𝐨 (◔‿◔)", quote=True)
         return
     if len(message.command) > 1:
         new_name = (
