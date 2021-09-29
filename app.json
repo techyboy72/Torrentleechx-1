@@ -14,15 +14,15 @@
     },
     "APP_ID": {
       "description": "Get this value from https://my.telegram.org",
-      "value": "1930247"
+      "value": "193247"
     },
     "API_HASH": {
       "description": "Get this value from https://my.telegram.org",
-      "value": "ee83ccc3caefae2b40d38ec162c68c8c"
+      "value": "ee83ccc3caefae2b40d38ec"
     },
     "TG_BOT_TOKEN": {
       "description": "get this value from @BotFather",
-      "value": "1336566148:AAEDzYeVFlTwiUsTKTDmaH-wiQX5BI-Rrwk"
+      "value": "1336566148:AAEDzYeVFlTwiUs"
     },
     "AUTH_CHANNEL": {
       "description": "Create a Super Group in Telegram, add @missrose_bot to the group, and send /id in the chat, to get this value..",
@@ -70,10 +70,6 @@
     },
     "UN_FINISHED_PROGRESS_STR": {
       "description": "should be a single character.",
-      "required": false
-    },
-    "TG_OFFENSIVE_API": {
-      "description": "should be an URL accepting the FormParams {i}, {m}, and {t}",
       "required": false
     },
     "CUSTOM_FILE_NAME": {
