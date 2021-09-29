@@ -1,40 +1,169 @@
 {
-    "name": "Telegram Leecher",
-    "description": "A Telegram Leecher based on Pyrogram",
-    "keywords": [
-      "telegram",
-      "pyrogram",
-      "torrent",
-      "3",
-      "leecher"
-    ],
-    "website": "https://github.com/azamaulanaaa/botkaca",
-    "repository": "https://github.com/azamaulanaaa/botkaca",
-    "env": {
-      "API_ID": {
-        "description": "get this value from https://my.telegram.org",
-        "value": ""
-      },
-      "API_HASH": {
-        "description": "get this value from https://my.telegram.org",
-        "value": ""
-      },
-      "BOT_TOKEN": {
-        "description": "get this value from @BotFather",
-        "value": ""
-      },
-      "BOT_PASSWORD": {
-        "description": "enter pasword or leave it public",
-        "value": "",
-        "required" : false
-      }
+  "name": "TL1",
+  "description": "A Telegram Torrent (and youtube-dl) Leecher based on Pyrogram.",
+  "keywords": [
+    "telegram"
+  ],
+  "repository": "NA",
+  "success_url": "NA",
+  "website": "NA",
+  "env": {
+    "ENV": {
+      "description": "Setting this to ANYTHING will enable webhooks when in env mode",
+      "value": "ANYTHING"
     },
-    "stack": "container",
-    "formation": {
-      "worker": {
-        "quantity": 1,
-        "size": "free"
-      }
+    "APP_ID": {
+      "description": "Get this value from https://my.telegram.org",
+      "value": "1930247"
+    },
+    "API_HASH": {
+      "description": "Get this value from https://my.telegram.org",
+      "value": "ee83ccc3caefae2b40d38ec162c68c8c"
+    },
+    "TG_BOT_TOKEN": {
+      "description": "get this value from @BotFather",
+      "value": "1336566148:AAEDzYeVFlTwiUsTKTDmaH-wiQX5BI-Rrwk"
+    },
+    "AUTH_CHANNEL": {
+      "description": "Create a Super Group in Telegram, add @missrose_bot to the group, and send /id in the chat, to get this value..",
+      "value": "-1234567890 "
+    },
+    "OWNER_ID": {
+      "description": "should be an integer. ID of owner of bot",
+      "value": "1234567"
+    },
+    "UPLOAD_AS_DOC": {
+      "description": "Takes two option True or False. If True file will be uploaded as document. This is for people who wants video files as document instead of streamable.",
+      "required": false
+    },
+    "CHUNK_SIZE": {
+      "description": "should be an integer",
+      "value": "128",
+      "required": false
+    },
+    "TG_MAX_FILE_SIZE": {
+      "description": "max file size limit for Telegram Upload .. value should be in bytes like 2000000000",
+      "required": false
+    },
+    "ARIA_TWO_STARTED_PORT": {
+      "description": "should be an integer. The port on which aria2c daemon must start, and keep listening ..default is port 6800",
+      "value": "6800",
+      "required": false
+    },
+    "EDIT_SLEEP_TIME_OUT": {
+      "description": "should be an integer. Number of seconds to wait before editing a message.",
+      "value": "15",
+      "required": false
+    },
+    "MAX_TG_SPLIT_FILE_SIZE": {
+      "description": "max file size limit for Telegram Upload in Splitting.. Like If you send 10gb file it will send in 2gb pieces..value should be in bytes like 2000000000",
+      "value": "2000000000",
+      "required": false
+    },
+    "MAX_TIME_TO_WAIT_FOR_TORRENTS_TO_START": {
+      "description": "should be an integer. Number of seconds to wait before cancelling a torrent.",
+      "required": false
+    },
+    "FINISHED_PROGRESS_STR": {
+      "description": "should be a single character.",
+      "required": false
+    },
+    "UN_FINISHED_PROGRESS_STR": {
+      "description": "should be a single character.",
+      "required": false
+    },
+    "TG_OFFENSIVE_API": {
+      "description": "should be an URL accepting the FormParams {i}, {m}, and {t}",
+      "required": false
+    },
+    "CUSTOM_FILE_NAME": {
+      "description": "custom filename for every single files or folders on leeching completion....",
+      "required": false
+    },
+    "LEECH_COMMAND": {
+      "description": "Enter your custom leech command like /leech@urgroupname and so on. Default is /leech",
+      "required": false
+    },
+    "INDEX_LINK": {
+      "description": "(Without "/" at last of the link, otherwise u will get error) During creating index, plz fill Default Root ID with the id of your DESTINATION_FOLDER after creating. Otherwise index will not work properly.",
+      "required": false
+    },
+    "GLEECH_COMMAND": {
+      "description": "Enter your custom gleech command like /gleech1@urgroupname and so on. Default is /gleech",
+      "required": false
+    },
+    "TELEGRAM_LEECH_COMMAND": {
+      "description": "Enter your custom tleech command like /tleech1@urgroupname and so on. Default is /tleech",
+      "required": false
+    },
+    "TELEGRAM_LEECH_UNZIP_COMMAND": {
+      "description": "Enter your custom tleech command like /tleechunzip1@urgroupname and so on. Default is /tleechunzip",
+      "required": false
+    },
+    "YTDL_COMMAND": {
+      "description": "Enter your custom ytdl command like ytdl1@urgroupname and so on. Default is /ytdl.",
+      "required": false
+    },
+    "GYTDL_COMMAND": {
+      "description": "Enter your custom gytdl command like gytdl1@urgroupname and so on. Default is /ytdl.",
+      "required": false
+    },
+    "PYTDL_COMMAND": {
+      "description": "Enter your custom pytdl command like pytdl1@urgroupname and so on. Default is /pytdl.",
+      "required": false
+    },
+    "CLONE_COMMAND_G": {
+      "description": "custom command for /gclone.",
+      "required": false
+    },
+    "RENEWME_COMMAND": {
+      "description": "custom command for /renewme.",
+      "required": false
+    },
+    "GET_SIZE_G": {
+      "description": "Enter your custom getsize command like getsize@urgroupname and so on. Default is /getsize.",
+      "required": false
+    },
+    "RENAME_COMMAND": {
+      "description": "Custom Rename Command Which should Be Set Via Vars Default is /rename.",
+      "required": false
+    },
+    "TOGGLE_VID": {
+      "description": "custom command for /renewmeCustom Cmd for TOGGLE_DOC default is /togglevid.",
+      "required": false
+    },
+    "TOGGLE_DOC": {
+      "description": "Custom Cmd for TOGGLE_DOC default is /toggledoc",
+      "required": false
+    },
+    "RCLONE_COMMAND": {
+      "description": "Custom command for /rclone",
+      "required": false
+    },
+    "LOG_COMMAND": {
+      "description": "custom command for /log.",
+      "required": false
+    },
+    "HELP_COMMAND": {
+      "description": "custom command for /help.",
+      "required": false
+    },
+    "STATUS_COMMAND": {
+      "description": "custom command for /status.",
+      "required": false
+    },
+    "RCLONE_CONF_URL": {
+      "description": "set direct url for rclone.conf.",
+      "required": false
+    },
+    "DESTINATION_FOLDER": {
+      "description": "Enter your Cloud folder NAME(not ID😅) in which you want to upload/store your files.",
+      "required": false
+    },
+    "CUSTOM_FILE_NAME": {
+      "description": "fill with name u want to prefix the file name like ur channel username🙊, keep empty for do nothing, but add to ur config vars even without input.",
+      "required": false
     }
-  }
-  
+  },
+  "stack": "container"
+}
