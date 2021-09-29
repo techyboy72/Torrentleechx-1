@@ -85,7 +85,7 @@
       "required": false
     },
     "INDEX_LINK": {
-      "description": "(Without "/" at last of the link, otherwise u will get error) During creating index, plz fill Default Root ID with the id of your DESTINATION_FOLDER after creating. Otherwise index will not work properly.",
+      "description": "(Without / at last of the link, otherwise u will get error) During creating index, plz fill Default Root ID with the id of your DESTINATION_FOLDER after creating. Otherwise index will not work properly.",
       "required": false
     },
     "GLEECH_COMMAND": {
