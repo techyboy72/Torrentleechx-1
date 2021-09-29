@@ -65,7 +65,7 @@
 # Deploying
  Direct Deploy To heroku
 	
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/judhistir88/Torrentleechx-1)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/techyboy72/Torrentleechx-1)
 	
 ---
 | How to deploy and Install ?!                                                                                                                 | Name                        | Type          | Lowest-Price Plan                     | Deploy                                                  |
